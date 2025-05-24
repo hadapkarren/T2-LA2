@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Login and Signup Forms</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #3b689b, #3b689b );
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    display: flex;
+    overflow: hidden;
+    max-width: 900px;
+    width: 100%;
+  }
+
+  .form-container {
+    flex: 1;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .form-container.signup {
+    background: #f9f7ff;
+  }
+
+  .form-title {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    color: #4a148c;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: #4a148c;
+  }
+
+  input {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+
+  input:focus {
+    border-color: #7b49c1;
+    outline: none;
+  }
+
+  button {
+    background: #7b49c1;
+    border: none;
+    color: white;
+    padding: 15px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  button:hover {
+    background: #5f3695;
+  }
+
+  .form-switch {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: #6a5495;
+  }
+
+  .form-switch a {
+    color: #7b49c1;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .form-switch a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      max-width: 400px;
+      padding: 20px;
+    }
+
+    .form-container {
+      padding: 30px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container login">
+      <h2 class="form-title">Login</h2>
+      <form id="login-form" action="#" method="POST">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" name="email" placeholder="" required />
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" name="password" placeholder="" required />
+        <button type="submit">Log In</button>
+      </form>
+      <div class="form-switch">
+        Don't have an account? <a href="#signup" onclick="switchForm('signup')">Sign Up</a>
+      </div>
+    </div>
+
+    <div class="form-container signup" style="border-left: 1px solid #ddd;">
+      <h2 class="form-title">Sign Up</h2>
+      <form id="signup-form" action="#" method="POST">
+        <label for="signup-username">Username</label>
+        <input type="text" id="signup-username" name="username" placeholder="" required />
+        <label for="signup-email">Email</label>
+        <input type="email" id="signup-email" name="email" placeholder="" required />
+        <label for="signup-password">Password</label>
+        <input type="password" id="signup-password" name="password" placeholder="" required />
+        <label for="signup-password2">Confirm Password</label>
+        <input type="password" id="signup-password2" name="password2" placeholder="" required />
+        <button type="submit">Sign Up</button>
+      </form>
+      <div class="form-switch">
+        Already have an account? <a href="#login" onclick="switchForm('login')">Log In</a>
+      </div>
+    </div>
+  </div>
+
+<script>
+  function switchForm(form) {
+    alert('Form switching can be implemented on demand');
+  }
+</script>
+</body>
+</html>
+
